@@ -28,7 +28,7 @@ Download the latest executable binary for your operating system from the [{Relea
 Open your terminal/command prompt at the location of the binary and run the executable with the required flags.
 
 ```bash
-./flash-game-downloader -l -n "GameName" -m "[https://example.com/game/main.swf](https://example.com/game/main.swf)" "files/config.xml"
+./flash-game-downloader -l -n "GameName" -m "https://example.com/game/main.swf" "files/config.xml"
 ```
 
 ---
