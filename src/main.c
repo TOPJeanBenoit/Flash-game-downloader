@@ -27,7 +27,8 @@ void command_line_interface(int argc, char *argv[]){
     while ((opt = getopt(argc, argv, "ln:m:h")) != -1) {
         switch (opt) {
             case 'l':
-                break;
+            
+            break;
             case 'n':
                 nom = optarg;
                 break;
@@ -35,13 +36,24 @@ void command_line_interface(int argc, char *argv[]){
                 main_val = optarg;
                 break;
             case 'h':
-                printf("[press F1 For ] HELP\n"); ////////////////////////////////////////// Help here
+                printf("Flash-game-downloader : A simple application to download flash games in several files. \n \
+-h: help \n \
+-l: Command line game download, file names passed as arguments \n \
+-n: name of the game / name of the folder that will contain the files \n \
+-m: Game's main file/hand URL \n \
+without - : the following files to download (xml, mp3, ...) \n \
+exemple: ./main.exe -l -n 'Name' -m 'https://false.example.com/main.swf' 'files/config.xml' ['other.xml']\n");
                 exit(0);
             
             default:
                 fprintf(stderr, "Usage: %s [-l] [-n nom] [-m main] file1 [file2 ...]\n", argv[0]);
                 exit(EXIT_FAILURE);
         }
+    }
+
+    if(main_val == NULL){
+        printf("Missing main file\n");
+        exit(0);
     }
 
     //"optind" contains the index of the first non-option argument
